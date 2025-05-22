@@ -1,0 +1,44 @@
+query GetQuotes(
+  $organization: [String]
+  $costCenter: [String]
+  $status: [String]
+  $search: String
+  $page: Int
+  $pageSize: Int
+  $sortOrder: String
+  $sortedBy: String
+) {
+  getQuotes(
+    organization: $organization
+    costCenter: $costCenter
+    status: $status
+    search: $search
+    page: $page
+    pageSize: $pageSize
+    sortOrder: $sortOrder
+    sortedBy: $sortedBy
+  ) @context(provider: "vtex.b2b-quotes-graphql") {
+    data {
+      id
+      referenceName
+      creatorEmail
+      creatorRole
+      creationDate
+      expirationDate
+      lastUpdate
+      subtotal
+      status
+      organization
+      organizationName
+      costCenter
+      costCenterName
+      viewedBySales
+      viewedByCustomer
+      hasChildren
+      childrenQuantity
+    }
+    pagination {
+      total
+    }
+  }
+}

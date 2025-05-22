@@ -1,0 +1,17 @@
+[
+  {
+    "section": "accountSettings",
+    "path": "/admin/b2b-quotes/view-quotes",
+    "icon": "extensions-ic",
+    "titleId": "View Quotes",
+    "searchKeyWordsHelpers": "admin/b2b-quotes.navigation.keywords"
+  },
+  {
+    "section": "accountSettings",
+    "path": "/admin/view-quotes",
+    "icon": "extensions-ic",
+    "titleId": "admin/b2b-demo.navigation.label",
+    "searchKeyWordsHelpers": "admin/b2b-quotes.navigation.keywords"
+  }
+ 
+]

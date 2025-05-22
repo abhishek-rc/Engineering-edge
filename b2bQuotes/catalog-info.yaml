@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: b2b-quotes
+  annotations:
+    github.com/project-slug: vtex-apps/b2b-quotes
+    vtex.com/application-id: XIWYRN8I
+spec:
+  system: b2b-suite
+  type: frontend-ui
+  lifecycle: maintenance
+  owner: te-0010
