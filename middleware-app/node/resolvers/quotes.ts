@@ -24,31 +24,41 @@ export const GetQuoteById = async (_: any, args: any, ctx: Context) => {
   try {
     // Pass the quoteId parameter to the getQuotesById method
     const data = await CustomMasterData.getQuotesById(args.quoteId);
-
-    console.log("Data for GetQuoteByIdddddddddddd:", data);
-    return data;
+    
+    console.log("Data for GetQuoteById:", data);
+    
+    // Return the first item from the array if it exists
+    return data && data.length > 0 ? data[0] : null;
   } catch (error) {
     throw new Error(`Failed to fetch quote by ID: ${error}`);
   }
 };
 
-export const UpdateAssignee = async (_:any, {assignedTo, assigneeId,documentId}:{assignedTo:string, assigneeId:string,documentId:string}, ctx:Context) => {
+export const UpdateAssignee = async (
+  _: any,
+  {
+    assignedTo,
+    assigneeId,
+    documentId,
+  }: { assignedTo: string; assigneeId: string; documentId: string },
+  ctx: Context
+) => {
   const {
     clients: { CustomMasterData },
   } = ctx;
-  
+
   try {
-    const updateResult = await CustomMasterData.updatePartialDocument({dataEntity:
-      "quotes",
+    await CustomMasterData.updatePartialDocument({
+      dataEntity: "quotes",
       id: documentId,
       fields: {
         assignedTo: assignedTo, //SELLER or CUSTOMER or OPERATOR
         assigneeId: assigneeId, //SELLERACCOUNTID or CUSTOMERACCOUNTID or OPERATORACCOUNTID
       },
-      schema:"v1.4"
-    })
+      schema: "v1.4",
+    });
     return true;
   } catch (error) {
     throw new Error(`Failed to update assignee: ${error}`);
   }
-}
+};

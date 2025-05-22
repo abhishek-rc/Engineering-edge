@@ -21,38 +21,42 @@ export default class MasterDataClient extends ExternalClient {
     return this.http.get(`quotes/search?${queryParams}`);
   }
 
-  public async getQuotesBySeller(sellerId?: string): Promise<any> {
-    return this.http.get("quotes/scroll?_size=10&_fields=_all");
-  }
+  // public async getQuotesBySeller(sellerId?: string): Promise<any> {
+  //   return this.http.get("quotes/scroll?_size=10&_fields=_all");
+  // }
 
   public async getAssigneeQuotes(assignedId: string): Promise<any> {
-    return this.http.get(`quotes/search?_fields=_all&_where=assigneeId=${assignedId}&_schema=v1.4`);
+    return this.http.get(
+      `quotes/search?_fields=_all&_where=assigneeId=${assignedId}&_schema=v1.4`
+    );
   }
 
   public async getQuotesById(quoteId: string): Promise<any> {
-    return this.http.get(`quotes/search?_fields=_all&id=${quoteId}&_schema=v1.4`);
+    return this.http.get(
+      `quotes/search?_fields=_all&id=${quoteId}&_schema=v1.4`
+    );
   }
 
   public async updatePartialDocument({
     dataEntity,
     id,
     fields,
-    schema = ''
+    schema = "",
   }: {
     dataEntity: string;
     id: string;
     fields: Record<string, any>;
     schema?: string;
   }): Promise<any> {
-    const schemaParam = schema ? `?_schema=${schema}` : '';
-    
+    const schemaParam = schema ? `?_schema=${schema}` : "";
+
     return this.http.patch(
       `${dataEntity}/documents/${id}${schemaParam}`,
       fields,
       {
         headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
       }
     );
