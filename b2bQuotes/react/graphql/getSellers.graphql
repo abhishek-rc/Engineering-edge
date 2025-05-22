@@ -1,0 +1,9 @@
+query GetSellers{
+  sellers {
+    items{
+      id,
+      name,
+      isActive
+    }
+  }
+}

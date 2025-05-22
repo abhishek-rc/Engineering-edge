@@ -1,0 +1,28 @@
+{
+  "vendor": "vtex",
+  "name": "backend-course",
+  "version": "0.0.2",
+  "title": "Backend Course",
+  "description": "Reference app for the Backend Course",
+  "builders": {
+    "graphql": "1.x",
+    "node": "6.x"
+  },
+  "scripts": {
+    "prereleasy": "bash lint.sh"
+  },
+  "credentialType": "absolute",
+  "policies": [
+    {
+      "name": "ADMIN_DS"
+    },
+    {
+      "name": "outbound-access",
+      "attrs": {
+        "host": "royalcyber.vtexcommercestable.com.br",
+        "path": "/api/dataentities/*"
+      }
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
+}
