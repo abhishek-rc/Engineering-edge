@@ -46,9 +46,9 @@ const AdminExample: FC = () => {
   if (error) return <div>Error: {error.message}</div>
   // console.log(data)
 
-  const filteredQuotes = data?.GetQuotes ? data.GetQuotes.filter((quote: any) => 
-    quote.assignedTo === 'seller' && quote.assigneeId === runtime.account
-  ) : [];
+  // const filteredQuotes = data?.GetQuotes ? data.GetQuotes.filter((quote: any) => 
+  //   quote.assignedTo === 'seller' && quote.assigneeId === runtime.account
+  // ) : [];
 
   // Format date function
   const formatDate = (dateString: string) => {
@@ -142,10 +142,10 @@ const AdminExample: FC = () => {
     >
       <PageBlock variation="full">
         <div className="mb-5">
-          {filteredQuotes && (
+          {data && data.GetQuotes && (
             <Table
               schema={schema}
-              items={filteredQuotes}
+              items={data?.GetQuotes}
               density="low"
               fullWidth
             />

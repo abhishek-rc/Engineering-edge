@@ -1,4 +1,0 @@
-mutation ClearCart($orderFormId: String) {
-  clearCart(orderFormId: $orderFormId)
-    @context(provider: "vtex.b2b-quotes-graphql")
-}

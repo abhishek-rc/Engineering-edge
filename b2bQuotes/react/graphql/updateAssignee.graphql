@@ -1,3 +1,0 @@
-mutation UpdateAssignee($assignedTo: String!, $assigneeId: String!, $documentId: String!) {
-  UpdateAssignee(assignedTo: $assignedTo, assigneeId: $assigneeId, documentId: $documentId)
-}

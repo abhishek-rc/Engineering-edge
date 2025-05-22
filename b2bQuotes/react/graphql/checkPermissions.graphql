@@ -1,3 +1,0 @@
-query CheckPermissions($email: String!) {
-  getQuoteEnabledForUser(email: $email)
-}
