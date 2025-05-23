@@ -6,19 +6,13 @@
     ]
   },
   "responsive-layout.desktop#sellerPage": {
-    "children": [
-      "seller-table#desktop"
-    ]
+    "children": ["seller-table#desktop"]
   },
   "responsive-layout.mobile#sellerPage": {
-    "children": [
-      "seller-table#mobile"
-    ]
+    "children": ["seller-table#mobile"]
   },
   "seller-table#desktop": {
-    "children": [
-      "flex-layout.row#sellerLayout"
-    ]
+    "children": ["flex-layout.row#sellerLayout"]
   },
   "flex-layout.row#sellerLayout": {
     "children": [
@@ -33,9 +27,7 @@
     }
   },
   "flex-layout.col#sellersList": {
-    "children": [
-      "seller-body"
-    ],
+    "children": ["seller-body"],
     "props": {
       "preventVerticalStretch": true,
       "width": "grow"
@@ -48,9 +40,7 @@
     ]
   },
   "flex-layout.row#simulateShipping": {
-    "children": [
-      "seller-simulate-shipping"
-    ]
+    "children": ["seller-simulate-shipping"]
   },
   "flex-layout.col#productSellersPage": {
     "children": [
@@ -59,16 +49,11 @@
       "product-identifier.product"
     ],
     "props": {
-      "blockClass": [
-        "productBoxSellersPage",
-        "productSellersPageCol"
-      ]
+      "blockClass": ["productBoxSellersPage", "productSellersPageCol"]
     }
   },
   "seller-body": {
-    "children": [
-      "seller-row"
-    ]
+    "children": ["seller-row"]
   },
   "seller-row": {
     "children": [
@@ -80,9 +65,7 @@
     ]
   },
   "seller-add-to-cart": {
-    "blocks": [
-      "add-to-cart-button"
-    ]
+    "blocks": ["add-to-cart-button"]
   },
   "product-images#sellers": {
     "props": {
@@ -98,14 +81,10 @@
     }
   },
   "seller-table#mobile": {
-    "children": [
-      "flex-layout.row#sellerLayoutMobile"
-    ]
+    "children": ["flex-layout.row#sellerLayoutMobile"]
   },
   "flex-layout.row#sellerLayoutMobile": {
-    "children": [
-      "flex-layout.row#sellerLayoutMobileCol"
-    ],
+    "children": ["flex-layout.row#sellerLayoutMobileCol"],
     "props": {
       "fullWidth": true,
       "blockClass": "sellerLayoutMobile"
@@ -122,10 +101,7 @@
     }
   },
   "flex-layout.row#productBox": {
-    "children": [
-      "product-images#sellers",
-      "flex-layout.col#productBoxInfo"
-    ],
+    "children": ["product-images#sellers", "flex-layout.col#productBoxInfo"],
     "props": {
       "preserveLayoutOnMobile": true,
       "preventHorizontalStretch": true

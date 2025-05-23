@@ -4,19 +4,104 @@
   },
   "responsive-layout.desktop": {
     "children": [
-      "flex-layout.row#imageList",
-      "flex-layout.row#shopByCategory",
+      // "flex-layout.row#imageList",
+      "slider-layout#slider",
+      // "flex-layout.row#shopByCategory",
+      "flex-layout.row#bestSellingProducts",
       // Deprecated
-      // "flex-layout.row#shopByBrand",
+      "flex-layout.row#ourBrands",
       "flex-layout.row#shelf1",
-      "flex-layout.row#imageBanners",
-      "flex-layout.row#singleBanner",
+      // "flex-layout.row#imageBanners",
+      // "flex-layout.row#singleBanner",
       "flex-layout.row#popular",
       "flex-layout.row#trending",
       "flex-layout.row#benefits",
       "flex-layout.row#newsletter"
     ]
   },
+
+  // Custom Slider
+  "slider-layout#slider": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      "showNavigationArrows": "desktopOnly",
+      "blockClass": "carousel",
+      "autoplay": {
+        "timeout": 5000,
+        "stopOnHover": true
+      }
+    },
+    "children": ["info-card#1", "info-card#2", "info-card#3"]
+  },
+  "slider-layout#slider--mobile": {
+    "props": {
+      "itemsPerPage": {
+        "desktop": 1,
+        "tablet": 1,
+        "phone": 1
+      },
+      "infinite": true,
+      // "showNavigationArrows": "desktopOnly",
+      "blockClass": "carousel-mobile",
+      "autoplay": {
+        "timeout": 5000,
+        "stopOnHover": true
+      }
+    },
+    "children": ["info-card#1", "info-card#2", "info-card#3"]
+  },
+
+  "info-card#1": {
+    "props": {
+      "id": "info-card-example",
+      "isFullModeStyle": true,
+      "textPosition": "left",
+      "imageUrl": "https://demo.engineering-edge.com/assets/img/main/main-slide-1.webp",
+      "headline": "LEVIN DRILL POINT",
+      "bodyText": "Our Patented design Levin Drill Point unique design results in faster penetration of material whilst reducing ‘slippage’. Test results are ~35% faster than the majority of competitor products. Save valuable time and money with Levin Drill Point from Engineering-Edge.",
+      "callToActionMode": "none",
+      "blockClass": "info-card-example",
+      "textAlignment": "center",
+      "fetchpriority": "auto",
+      "preload": true
+    }
+  },
+  "info-card#2": {
+    "props": {
+      "id": "info-card-example",
+      "isFullModeStyle": true,
+      "textPosition": "left",
+      "imageUrl": "https://demo.engineering-edge.com/assets/img/main/main-slide-2.webp",
+      "headline": "ABOUT US",
+      "bodyText": "Since 1989, Engineering Edge has been manufacturing fasteners for the Construction, Oil & Gas, and Industrial sectors. Leveraging our expertise in production and R&D we develop unique fastening solutions that surpass conventional designs, ensur ng quality and innovation for our valued global clients. Our goal is to be the global leader in fastening solutions, setting the standard for quality, innovation, and collaboration across the industry",
+      "callToActionMode": "none",
+      "blockClass": "info-card-example",
+      "textAlignment": "center",
+      "fetchpriority": "auto",
+      "preload": true
+    }
+  },
+  "info-card#3": {
+    "props": {
+      "id": "info-card-example",
+      "isFullModeStyle": true,
+      "textPosition": "left",
+      "imageUrl": "https://demo.engineering-edge.com/assets/img/main/main-slide-3.webp",
+      "headline": "ENGINEERED FOR EXCELLENCE",
+      "bodyText": "At Engineering Edge, we build strong partnerships from the outset by providing expert consultation and technical support to ensure your success. We prioritise optimal design, manufacturing processes, and Quality Control (QC) to deliver value-for-money products and enhance our customers’ efficiency.",
+      "callToActionMode": "none",
+      "blockClass": "info-card-example",
+      "textAlignment": "center",
+      "fetchpriority": "auto",
+      "preload": true
+    }
+  },
+  // End
 
   "flex-layout.row#imageList": {
     "props": {
@@ -63,237 +148,321 @@
       "showNavigationArrows": "desktopOnly"
     }
   },
-  "flex-layout.row#shopByCategory": {
+
+  "flex-layout.row#bestSellingProducts": {
     "props": {
-      "blockClass": "shopByCategorySection"
+      "blockClass": "bestSellingProductsSection"
     },
-    "children": ["flex-layout.col#shopByCategory"]
+    "children": ["flex-layout.col#bestSellingProducts"]
   },
-  "flex-layout.col#shopByCategory": {
+  "flex-layout.row#bestSellingProducts--mobile": {
     "props": {
-      "blockClass": "shopByCategory"
+      "blockClass": "bestSellingProductsSection--mobile"
     },
-    "children": ["rich-text#shopByTitle", "flex-layout.row#categories"]
+    "children": ["flex-layout.col#bestSellingProducts"]
   },
-  "rich-text#shopByTitle": {
+  "flex-layout.col#bestSellingProducts": {
     "props": {
-      "text": "### Shop by category",
-      "blockClass": "shopByCategoryTitle"
+      "width": "100",
+      "blockClass": "bestSellingProducts"
+    },
+    "children": ["rich-text#bestSellingTitle", "flex-layout.row#bsproducts"]
+  },
+  "rich-text#bestSellingTitle": {
+    "props": {
+      "text": "### BEST SELLING PRODUCTS",
+      "blockClass": "bestSellingTitle"
     }
   },
-  "flex-layout.row#categories": {
+  "flex-layout.row#bsproducts": {
     "props": {
-      "blockClass": "shopByCategory",
+      "blockClass": "bsproducts",
       "horizontalAlign": "center",
       "verticalAlign": "center",
-      "preventHorizontalStretch": true,
-      "preventVerticalStretch": true,
+      // "preventHorizontalStretch": true,
+      // "preventVerticalStretch": true,
       "fullWidth": true
     },
     "children": [
-      "link#shoBy1",
-      "link#shoBy2",
-      "link#shoBy3",
-      "link#shoBy4",
-      "link#shoBy5",
-      "link#shoBy6"
+      "flex-layout.col#p1",
+      "flex-layout.col#p2",
+      "flex-layout.col#p3",
+      "flex-layout.col#p4"
     ]
   },
-  "link#shoBy1": {
-    "children": ["image#shoBy1", "rich-text#cat1"],
+
+  "flex-layout.col#p1": {
     "props": {
-      "href": "/apparel",
-      "blockClass": "shopByLink"
+      "blockClass": "bsproduct-col",
+      "width": "23"
+    },
+    "children": [
+      "image#p1",
+      "rich-text#shopNow1",
+      "rich-text#t1",
+      "rich-text#d1"
+    ]
+  },
+  "image#p1": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-product-1.webp",
+      "maxHeight": 400
     }
   },
-  "link#shoBy2": {
-    "children": ["image#shoBy2", "rich-text#cat2"],
+  "rich-text#shopNow1": {
     "props": {
-      "href": "/beverage",
-      "blockClass": "shopByLink"
+      "text": "[SHOP NOW](/)",
+      "blockClass": "bsp-cta",
+      "textAlignment": "CENTER"
     }
   },
-  "link#shoBy3": {
-    "children": ["image#shoBy3", "rich-text#cat3"],
+  "rich-text#t1": {
     "props": {
-      "href": "/sporting",
-      "blockClass": "shopByLink"
+      "text": "Skylight Fixing Screws",
+      "blockClass": "bsp-heading",
+      "textAlignment": "CENTER"
     }
   },
-  "link#shoBy4": {
-    "children": ["image#shoBy4", "rich-text#cat4"],
+  "rich-text#d1": {
     "props": {
-      "href": "/Agribusiness",
-      "blockClass": "shopByLink"
+      "text": "Designed for crest fixing fibreglass skylight roof sheets to steel purlins",
+      "blockClass": "bsp-desc",
+      "textAlignment": "CENTER"
     }
   },
-  "link#shoBy5": {
-    "children": ["image#shoBy5", "rich-text#cat5"],
+  // "flex-layout.col#p2":{},
+
+  "flex-layout.col#p2": {
     "props": {
-      "href": "/home-appliance",
-      "blockClass": "shopByLink"
+      "blockClass": "bsproduct-col",
+      "width": "23"
+    },
+    "children": [
+      "image#p2",
+      "rich-text#shopNow2",
+      "rich-text#t2",
+      "rich-text#d2"
+    ]
+  },
+  "image#p2": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-product-2.webp",
+      "maxHeight": 400
     }
   },
-  "link#shoBy6": {
-    "children": ["image#shoBy6", "rich-text#cat6"],
+  "rich-text#shopNow2": {
     "props": {
-      "href": "/computer",
-      "blockClass": "shopByLink"
+      "text": "[SHOP NOW](/)",
+      "blockClass": "bsp-cta",
+      "textAlignment": "CENTER"
     }
   },
-  "image#shoBy1": {
+  "rich-text#t2": {
     "props": {
-      "src": "assets/placeholders/apparelPlaceholder.png",
-      "blockClass": "shoByImage"
+      "text": "Self Drilling Screws",
+      "blockClass": "bsp-heading",
+      "textAlignment": "CENTER"
     }
   },
-  "image#shoBy2": {
+  "rich-text#d2": {
     "props": {
-      "src": "assets/placeholders/beveragePlaceholder.png",
-      "blockClass": "shoByImage"
-    }
-  },
-  "image#shoBy3": {
-    "props": {
-      "src": "assets/placeholders/sportingPlaceholder.png",
-      "blockClass": "shoByImage"
-    }
-  },
-  "image#shoBy4": {
-    "props": {
-      "src": "assets/placeholders/agribusinessPlaceholder.png",
-      "blockClass": "shoByImage"
-    }
-  },
-  "image#shoBy5": {
-    "props": {
-      "src": "assets/placeholders/homeAppliancePlaceholder.png",
-      "blockClass": "shoByImage"
-    }
-  },
-  "image#shoBy6": {
-    "props": {
-      "src": "assets/placeholders/computerPlaceholder.png",
-      "blockClass": "shoByImage"
-    }
-  },
-  "rich-text#cat1": {
-    "props": {
-      "text": "Apparel",
-      "blockClass": "shopByCategory"
-    }
-  },
-  "rich-text#cat2": {
-    "props": {
-      "text": "Beverage",
-      "blockClass": "shopByCategory"
-    }
-  },
-  "rich-text#cat3": {
-    "props": {
-      "text": "Sporting",
-      "blockClass": "shopByCategory"
-    }
-  },
-  "rich-text#cat4": {
-    "props": {
-      "text": "Agribusiness",
-      "blockClass": "shopByCategory"
-    }
-  },
-  "rich-text#cat5": {
-    "props": {
-      "text": "Home Appliance",
-      "blockClass": "shopByCategory"
-    }
-  },
-  "rich-text#cat6": {
-    "props": {
-      "text": "Computer",
-      "blockClass": "shopByCategory"
+      "text": "Carbon steel fasteners for fixing steel sheets into timber substrates",
+      "blockClass": "bsp-desc",
+      "textAlignment": "CENTER"
     }
   },
 
-  // Deprecated
-  // "flex-layout.row#shopByBrand": {
-  //   "children": ["flex-layout.col#shopByBrand"]
-  // },
-  // "flex-layout.col#shopByBrand": {
-  //   "props": {
-  //     "blockClass": "shopByBrand"
-  //   },
-  //   "children": [
-  //     "rich-text#sectionTitle",
-  //     "list-context.image-list#brandImages"
-  //   ]
-  // },
-  // "rich-text#sectionTitle": {
-  //   "props": {
-  //     "text": "### Shop by brand",
-  //     "blockClass": "sectionTitle"
-  //   }
-  // },
-  // "list-context.image-list#brandImages": {
-  //   "children": ["slider-layout#brand-images"],
-  //   "props": {
-  //     "height": 328,
-  //     "images": [
-  //       {
-  //         "image": "assets/placeholders/AppleBrand.png",
-  //         "description": "something something",
-  //         "link": {
-  //           "url": "/apple"
-  //         }
-  //       },
-  //       {
-  //         "image": "assets/placeholders/AppleBrand.png",
-  //         "description": "something something",
-  //         "link": {
-  //           "url": "/apple"
-  //         }
-  //       },
-  //       {
-  //         "image": "assets/placeholders/AppleBrand.png",
-  //         "description": "something something",
-  //         "link": {
-  //           "url": "/apple"
-  //         }
-  //       },
-  //       {
-  //         "image": "assets/placeholders/AppleBrand.png",
-  //         "description": "something something",
-  //         "link": {
-  //           "url": "/apple"
-  //         }
-  //       },
-  //       {
-  //         "image": "assets/placeholders/AppleBrand.png",
-  //         "description": "something something",
-  //         "link": {
-  //           "url": "/apple"
-  //         }
-  //       },
-  //       {
-  //         "image": "assets/placeholders/AppleBrand.png",
-  //         "description": "something something",
-  //         "link": {
-  //           "url": "/apple"
-  //         }
-  //       }
-  //     ]
-  //   }
-  // },
-  // "slider-layout#brand-images": {
-  //   "props": {
-  //     "blockClass": "brandSlider",
-  //     "itemsPerPage": {
-  //       "desktop": 6,
-  //       "tablet": 4,
-  //       "phone": 3
-  //     },
-  //     "infinite": false
-  //   }
-  // },
+  "flex-layout.col#p3": {
+    "props": {
+      "blockClass": "bsproduct-col",
+      "width": "23"
+    },
+    "children": [
+      "image#p3",
+      "rich-text#shopNow3",
+      "rich-text#t3",
+      "rich-text#d3"
+    ]
+  },
+  "image#p3": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-product-3.webp",
+      "maxHeight": 400
+    }
+  },
+  "rich-text#shopNow3": {
+    "props": {
+      "text": "[SHOP NOW](/)",
+      "blockClass": "bsp-cta",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#t3": {
+    "props": {
+      "text": "Accessories",
+      "blockClass": "bsp-heading",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#d3": {
+    "props": {
+      "text": "Construction Equipment, Electric Screwdrivers, Adaptors & Drill bits",
+      "blockClass": "bsp-desc",
+      "textAlignment": "CENTER"
+    }
+  },
+
+  "flex-layout.col#p4": {
+    "props": {
+      "blockClass": "bsproduct-col",
+      "width": "23"
+    },
+    "children": [
+      "image#p4",
+      "rich-text#shopNow4",
+      "rich-text#t4",
+      "rich-text#d4"
+    ]
+  },
+  "image#p4": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-product-4.webp",
+      "maxHeight": 400
+    }
+  },
+  "rich-text#shopNow4": {
+    "props": {
+      "text": "[SHOP NOW](/)",
+      "blockClass": "bsp-cta",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#t4": {
+    "props": {
+      "text": "Sealed Washers",
+      "blockClass": "bsp-heading",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#d4": {
+    "props": {
+      "text": "Washers are used to distribute a fastener’s load, reducing friction and loosening",
+      "blockClass": "bsp-desc",
+      "textAlignment": "CENTER"
+    }
+  },
+
+  "flex-layout.row#ourBrands": {
+    "props": {
+      "blockClass": "brandContainer",
+      "fullWidth": true
+    },
+    "children": ["flex-layout.col#brandContainer"]
+    // "children": ["rich-text#brandHeading", "rich-text#brandDesc"]
+  },
+
+  "flex-layout.col#brandContainer": {
+    "children": [
+      "rich-text#brandHeading",
+      "rich-text#brandDesc",
+      "flex-layout.row#brandSymbol"
+    ],
+    "props": {
+      "blockClass": ["brandInnerContainer"]
+    }
+  },
+
+  "rich-text#brandHeading": {
+    "props": {
+      "text": "Our Brands",
+      "blockClass": ["brandHeading"]
+    }
+  },
+
+  "rich-text#brandDesc": {
+    "props": {
+      "text": "Research & Developement in Innovative Products",
+      "blockClass": ["brandDesc"]
+    }
+  },
+
+  "flex-layout.row#brandSymbol": {
+    "props": {
+      "blockClass": "BrandSymbolContainer"
+    },
+    "children": [
+      "flex-layout.col#brand1",
+      "flex-layout.col#brand2",
+      "flex-layout.col#brand3"
+    ]
+  },
+
+  "flex-layout.col#brand1": {
+    "props": {
+      "blockClass": ["brand"]
+    },
+    "children": ["image#brandImage1", "image#brandTitle1"]
+  },
+
+  "image#brandImage1": {
+    "props": {
+      "src": "https://demo.engineering-edge.com/assets/img/main/fastener_01.webp",
+      "blockClass": ["brandsMainImage"]
+    }
+  },
+
+  "image#brandTitle1": {
+    "props": {
+      "src": "https://demo.engineering-edge.com/assets/img/main/corroshield-logo.webp",
+      "blockClass": ["brandsImageTitle"]
+    }
+  },
+
+  "flex-layout.col#brand2": {
+    "props": {
+      "blockClass": ["brand"]
+    },
+    "children": ["image#brandImage2", "image#brandTitle2"]
+  },
+
+  "image#brandImage2": {
+    "props": {
+      "src": "https://demo.engineering-edge.com/assets/img/main/fastener_02.webp",
+      "blockClass": ["brandsMainImage"]
+    }
+  },
+
+  "image#brandTitle2": {
+    "props": {
+      "src": "https://demo.engineering-edge.com/assets/img/main/dyno-logo.webp",
+      "blockClass": ["brandsImageTitle"]
+    }
+  },
+
+  "flex-layout.col#brand3": {
+    "props": {
+      "blockClass": ["brand"]
+    },
+    "children": ["image#brandImage3", "image#brandTitle3"]
+  },
+
+  "image#brandImage3": {
+    "props": {
+      "src": "https://demo.engineering-edge.com/assets/img/main/fastener_03.webp",
+      "blockClass": ["brandsMainImage"]
+    }
+  },
+
+  "image#brandTitle3": {
+    "props": {
+      "src": "https://demo.engineering-edge.com/assets/img/main/tapperman-logo.webp",
+      "blockClass": ["brandsImageTitle"]
+    }
+  },
 
   "flex-layout.row#shelf1": {
     "children": ["list-context.product-list#productSlider"],

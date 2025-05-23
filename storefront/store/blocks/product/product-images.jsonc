@@ -1,14 +1,15 @@
 {
   "product-images#desktop": {
     "props": {
-      "blockClass": "desktop",
+      "blockClass": ["desktop"],
       "maxHeight": 448,
       "aspectRatio": "1:1",
       "showNavigationArrows": false,
       "showPaginationDots": false,
       "thumbnailAspectRatio": "1:1",
       "thumbnailMaxHeight": 100,
-      "zoomMode": "in-place-hover"
+      "zoomMode": "in-place-hover",
+      "position": "right"
     }
   },
 

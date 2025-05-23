@@ -26,7 +26,12 @@
     ]
   },
   "responsive-layout.desktop#product": {
-    "children": ["flex-layout.row#product", "flex-layout.row#alsoView"]
+    "children": [
+      "flex-layout.row#product",
+      "flex-layout.row#alsoView",
+      "flex-layout.row#customer-support",
+      "flex-layout.row#bestSellingProducts"
+    ]
   },
   "flex-layout.row#product": {
     "children": ["flex-layout.col#product"]
@@ -36,10 +41,220 @@
       "flex-layout.row#breadcrumb",
       "flex-layout.row#product-details",
       "product-kit#buy-together", // This block won't work if it's not a direct children of store.product
-      "flex-layout.row#description-and-gallery",
-      "flex-layout.row#features",
-      "flex-layout.row#specification",
-      "flex-layout.row#reviews-and-ratings"
+      // "flex-layout.row#description-and-gallery",
+      // "flex-layout.row#features",
+      // "flex-layout.row#specification",
+      // "flex-layout.row#reviews-and-ratings"
+      "flex-layout.row#specification"
+    ],
+    "props": {
+      "blockClass": "pdpContent"
+    }
+  },
+  "flex-layout.row#bestSellingProducts": {
+    "props": {
+      "blockClass": "bestSellingProductsSection"
+    },
+    "children": ["flex-layout.col#bestSellingProducts"]
+  },
+  "flex-layout.row#bestSellingProducts--mobile": {
+    "props": {
+      "blockClass": "bestSellingProductsSection--mobile"
+    },
+    "children": ["flex-layout.col#bestSellingProducts"]
+  },
+  "flex-layout.col#bestSellingProducts": {
+    "props": {
+      "width": "100",
+      "blockClass": "bestSellingProducts"
+    },
+    "children": ["rich-text#bestSellingTitle", "flex-layout.row#bsproducts"]
+  },
+  "rich-text#bestSellingTitle": {
+    "props": {
+      "text": "### BEST SELLING PRODUCTS",
+      "blockClass": "bestSellingTitle"
+    }
+  },
+  "flex-layout.row#bsproducts": {
+    "props": {
+      "blockClass": "bsproducts",
+      "horizontalAlign": "center",
+      "verticalAlign": "center",
+      // "preventHorizontalStretch": true,
+      // "preventVerticalStretch": true,
+      "fullWidth": true
+    },
+    "children": [
+      "flex-layout.col#p1",
+      "flex-layout.col#p2",
+      "flex-layout.col#p3",
+      "flex-layout.col#p4"
     ]
+  },
+
+  "flex-layout.col#p1": {
+    "props": {
+      "blockClass": "bsproduct-col",
+      "width": "23"
+    },
+    "children": [
+      "image#p1",
+      "rich-text#shopNow1",
+      "rich-text#t1",
+      "rich-text#d1"
+    ]
+  },
+  "image#p1": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-product-1.webp",
+      "maxHeight": 400
+    }
+  },
+  "rich-text#shopNow1": {
+    "props": {
+      "text": "[SHOP NOW](/)",
+      "blockClass": "bsp-cta",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#t1": {
+    "props": {
+      "text": "Skylight Fixing Screws",
+      "blockClass": "bsp-heading",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#d1": {
+    "props": {
+      "text": "Designed for crest fixing fibreglass skylight roof sheets to steel purlins",
+      "blockClass": "bsp-desc",
+      "textAlignment": "CENTER"
+    }
+  },
+  // "flex-layout.col#p2":{},
+
+  "flex-layout.col#p2": {
+    "props": {
+      "blockClass": "bsproduct-col",
+      "width": "23"
+    },
+    "children": [
+      "image#p2",
+      "rich-text#shopNow2",
+      "rich-text#t2",
+      "rich-text#d2"
+    ]
+  },
+  "image#p2": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-product-2.webp",
+      "maxHeight": 400
+    }
+  },
+  "rich-text#shopNow2": {
+    "props": {
+      "text": "[SHOP NOW](/)",
+      "blockClass": "bsp-cta",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#t2": {
+    "props": {
+      "text": "Self Drilling Screws",
+      "blockClass": "bsp-heading",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#d2": {
+    "props": {
+      "text": "Carbon steel fasteners for fixing steel sheets into timber substrates",
+      "blockClass": "bsp-desc",
+      "textAlignment": "CENTER"
+    }
+  },
+
+  "flex-layout.col#p3": {
+    "props": {
+      "blockClass": "bsproduct-col",
+      "width": "23"
+    },
+    "children": [
+      "image#p3",
+      "rich-text#shopNow3",
+      "rich-text#t3",
+      "rich-text#d3"
+    ]
+  },
+  "image#p3": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-product-3.webp",
+      "maxHeight": 400
+    }
+  },
+  "rich-text#shopNow3": {
+    "props": {
+      "text": "[SHOP NOW](/)",
+      "blockClass": "bsp-cta",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#t3": {
+    "props": {
+      "text": "Accessories",
+      "blockClass": "bsp-heading",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#d3": {
+    "props": {
+      "text": "Construction Equipment, Electric Screwdrivers, Adaptors & Drill bits",
+      "blockClass": "bsp-desc",
+      "textAlignment": "CENTER"
+    }
+  },
+
+  "flex-layout.col#p4": {
+    "props": {
+      "blockClass": "bsproduct-col",
+      "width": "23"
+    },
+    "children": [
+      "image#p4",
+      "rich-text#shopNow4",
+      "rich-text#t4",
+      "rich-text#d4"
+    ]
+  },
+  "image#p4": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-product-4.webp",
+      "maxHeight": 400
+    }
+  },
+  "rich-text#shopNow4": {
+    "props": {
+      "text": "[SHOP NOW](/)",
+      "blockClass": "bsp-cta",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#t4": {
+    "props": {
+      "text": "Sealed Washers",
+      "blockClass": "bsp-heading",
+      "textAlignment": "CENTER"
+    }
+  },
+  "rich-text#d4": {
+    "props": {
+      "text": "Washers are used to distribute a fastener’s load, reducing friction and loosening",
+      "blockClass": "bsp-desc",
+      "textAlignment": "CENTER"
+    }
   }
 }

@@ -18,3 +18,31 @@
   width: 100%;
   white-space: pre-wrap;
 }
+
+.specificationName--specification__name {
+  color: #00aeef;
+}
+
+.headingLevel3--csTitle {
+  margin: 0;
+  color: #5d596c;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.paragraph--csContent {
+  padding-top: 25px;
+  margin: 0;
+  color: #5d596c;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.link--csTitle {
+  text-decoration: none;
+  color: #00aeef;
+}
+
+.heading--alsoView {
+  color: #5d596c;
+}

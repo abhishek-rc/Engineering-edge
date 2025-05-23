@@ -3,7 +3,7 @@
     "children": ["flex-layout.col#left-col", "flex-layout.col#right-col"],
     "props": {
       "blockClass": "main",
-      "colGap": 7,
+      "colGap": 10,
       "colSizing": "auto",
       "preventHorizontalStretch": true,
       "preventVerticalStretch": true

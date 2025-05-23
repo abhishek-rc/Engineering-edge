@@ -2,7 +2,7 @@
   "flex-layout.row#alsoView": {
     "children": ["flex-layout.col#alsoView"],
     "props": {
-      "blockClass": ["relative", "bg-base", "z-998"]
+      "blockClass": ["relative", "bg-base", "z-998", "CustomerViewContainer"]
     }
   },
   "flex-layout.col#alsoView": {
@@ -28,7 +28,7 @@
   "slider-layout#alsoView": {
     "props": {
       "itemsPerPage": {
-        "desktop": 6,
+        "desktop": 4,
         "tablet": 4,
         "phone": 2
       },

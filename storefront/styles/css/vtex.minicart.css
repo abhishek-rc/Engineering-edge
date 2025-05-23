@@ -3,7 +3,7 @@
 }
 
 .minicartIconContainer {
-  color: #fff;
+  color:#979899 !important;
 }
 
 .closeIconContainer::before {

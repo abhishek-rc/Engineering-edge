@@ -1,10 +1,12 @@
 {
   "responsive-layout.mobile": {
     "children": [
-      "flex-layout.row#imageList--mobile",
-      "flex-layout.row#shopByCategory",
+      // "flex-layout.row#imageList--mobile",
+      // "flex-layout.row#shopByCategory",
       // Deprecated
       // "flex-layout.row#shopByBrandMobile",
+      "slider-layout#slider--mobile",
+      "flex-layout.row#bestSellingProducts--mobile",
       "flex-layout.row#shelfMobile",
       "flex-layout.row#banners",
       "flex-layout.row#singleBannerMobile",

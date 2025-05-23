@@ -1,0 +1,47 @@
+{
+  "flex-layout.row#customer-support": {
+    "children": ["flex-layout.row#customerContainer"],
+    "props": {
+      "blockClass": "customerSupportContainer"
+    }
+  },
+  "flex-layout.row#customerContainer": {
+    "children": [
+      "flex-layout.col#customerSupportImage",
+      "flex-layout.col#customerSupportContent"
+    ],
+    "props": {
+      "blockClass": "customerSupportStyle",
+      "colGap": 10,
+      "preventHorizontalStretch": true
+    }
+  },
+  "flex-layout.col#customerSupportImage": {
+    "children": ["image#customerSupport"],
+    "props": {
+      "blockClass": "customerImage"
+    }
+  },
+  "image#customerSupport": {
+    "props": {
+      "src": "https://royalcyber.vtexassets.com/assets/vtex.file-manager-graphql/images/c8ef4037-7901-437a-99fd-32820309f3eb___496a3098a7750302e913b4e350daa64d.png",
+      "maxHeight": 72,
+      "maxWidth": 72
+    }
+  },
+  "flex-layout.col#customerSupportContent": {
+    "children": ["rich-text#CSTitle", "rich-text#CSContent"]
+  },
+  "rich-text#CSTitle": {
+    "props": {
+      "text": "### Need assistance? Check our [Help Page](/help) or [Contact Us](/contact-us)",
+      "blockClass": "csTitle"
+    }
+  },
+  "rich-text#CSContent": {
+    "props": {
+      "text": "“RFQ Now” is not an order. It is a function to request for quotation. All orders are manufactured directly by factory and are only on indent basis. No traders are involved to ensure the most competitive price. Please allow us manufacturing lead time to complete all orders.",
+      "blockClass": "csContent"
+    }
+  }
+}

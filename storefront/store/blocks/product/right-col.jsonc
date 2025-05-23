@@ -5,7 +5,13 @@
       "flex-layout.row#product-name",
       "flex-layout.row#product-identifier",
       "condition-layout.product#sku-selector-or-list",
-      "flex-layout.row#assembly-options"
+      "flex-layout.row#assembly-options",
+      "flex-layout.row#fake-summary",
+      "flex-layout.row#seller-name",
+      "product-selling-price",
+      // "flex-layout.row#location-availability",
+      "flex-layout.row#product-availability-and-quantity",
+      "flex-layout.row#buy-buttons"
       // "flex-layout.row#link-seller"
     ],
     "props": {
@@ -45,13 +51,18 @@
   },
   "vtex.store-components:product-name#product-page": {
     "props": {
-      "blockClass": "product-page"
+      "blockClass": ["product__name"]
     }
   },
   "flex-layout.row#product-identifier": {
     "children": ["product-identifier.product"],
     "props": {
       "blockClass": ["product-identifier"]
+    }
+  },
+  "product-selling-price": {
+    "props": {
+      "blockClass": "product__price"
     }
   }
 }

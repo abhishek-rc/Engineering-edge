@@ -1,6 +1,12 @@
 /* BEGIN - Header */
 .flexRow--header {
-  background: var(--b2b-header-blue-medium);
+  /* background: var(--b2b-header-blue-medium); */
+  background: var(--base);
+  border-bottom: 1px #dbdade solid;
+}
+
+.container--HeaderStripeText:hover {
+  background-color: red;
 }
 
 .flexRowContent--header {
@@ -10,7 +16,11 @@
 }
 
 .flexRow--headerStripe {
-  background: var(--b2b-blue-darkest);
+  /* background: var(--b2b-blue-darkest); */
+  background: var(--base);
+
+  box-shadow: 0 4px 6px -4px rgba(0, 0, 0, 0.2) !important;
+  font-family: play, sans-serif !important;
 }
 
 .flexCol--drawerInnerCol :global(.vtex-login-2-x-buttonLink) {
@@ -524,8 +534,8 @@
 }
 
 .flexRow--add-to-cart :global(.vtex-button) {
-  background: #ff7d30;
-  border-color: #ff7d30;
+  background: #00aeef;
+  border-color: #00aeef;
   color: #fff;
   height: 52px;
 }
@@ -716,4 +726,257 @@
 .flexRow--c-on-base--inverted,
 .flexCol--c-on-base--inverted {
   color: #fff;
+}
+
+/* Custom  */
+.flexColChild--mylogo {
+  width: 300px !important;
+}
+.flexCol--mySearch {
+  /* width: 200px !important; */
+}
+
+.flexRowContent--HeaderStripeTextChilds {
+  /* display: flex; */
+  flex-direction: column;
+  /* display: none; */
+  z-index: 1000000;
+  position: absolute;
+  background: aliceblue;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  width: auto;
+  padding: 28px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  display: none;
+}
+
+.flexColChild--brands:hover .flexRowContent--HeaderStripeTextChilds {
+  background-color: yellow;
+  display: block;
+}
+
+/* //Custom */
+
+.stretchChildrenWidth {
+  padding: 0;
+}
+
+.flexRow--bestSellingProductsSection {
+  height: 635px;
+}
+.flexRow--bestSellingProductsSection--mobile {
+  height: 2055px;
+}
+.flexRowContent--bestSellingProductsSection {
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+/* BEST SELLING PRODUCTS */
+.flexRowContent--bsproducts {
+  height: 400px;
+
+  width: 100%;
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 0.5rem;
+  padding-left: 0.5rem;
+  margin-top: 0.5rem;
+  /* background-color: red; */
+}
+/* .flexRowContent--bsproducts .flex{
+  width: 23%;
+} */
+
+.flexCol--bsproduct-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: "";
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid #dbdade;
+  border-radius: 0.375rem;
+
+  margin-top: 0.5rem; /* from --bs-card-spacer-y */
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem; /* from --bs-card-spacer-x */
+  margin-right: 0.5rem;
+  box-shadow: 0 0.25rem 1.125rem rgba(75, 70, 92, 0.1);
+  height: 470px;
+  width: 350px;
+}
+.flexCol--bsproduct-col:hover {
+  position: relative;
+  top: -10px;
+  transition: top ease-in-out 0.5s;
+}
+.flexColChild--bsproduct-col {
+  height: 95%;
+  background-clip: padding-box;
+  /* box-shadow: 0 .25rem 1.125rem rgba(75,70,92,.1); */
+  /* margin-left: 10px;
+margin-right: 10px; */
+}
+
+.flexRowContent--ourBrandsSection {
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexRow--ourBrandsSection {
+  /* Font & Text */
+  font-family: play, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 22.05px;
+  text-decoration: none solid rgb(255, 255, 255);
+  text-align: center;
+  text-indent: 0px;
+  text-transform: none;
+  vertical-align: baseline;
+  white-space: normal;
+  word-spacing: 0px;
+
+  /* Color & Background */
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url("https://demo.engineering-edge.com/assets/img/main/index-banner-1.webp");
+  background-position: 50% 70%;
+  background-repeat: no-repeat;
+  color: rgb(255, 255, 255);
+
+  /* Box */
+  height: 608px;
+  width: 1881px;
+  border: 0px none rgb(255, 255, 255);
+  border-top: 0px none rgb(255, 255, 255);
+  border-right: 0px none rgb(255, 255, 255);
+  border-bottom: 0px none rgb(255, 255, 255);
+  border-left: 0px none rgb(255, 255, 255);
+  margin: 0px;
+  padding: 0px;
+  max-height: none;
+  min-height: 608px;
+  max-width: none;
+  min-width: auto;
+
+  /* Positioning */
+  position: static;
+  top: auto;
+  bottom: auto;
+  right: auto;
+  left: auto;
+  float: none;
+  display: block;
+  clear: none;
+  z-index: auto;
+
+  /* List */
+  list-style-image: none;
+  list-style-type: disc;
+  list-style-position: outside;
+
+  /* Table */
+  border-collapse: separate;
+  border-spacing: 0px 0px;
+  caption-side: top;
+  empty-cells: show;
+  table-layout: auto;
+
+  /* Miscellaneous */
+  overflow: visible;
+  cursor: auto;
+  visibility: visible;
+}
+
+.flexRowContent--brandContainer {
+  height: 700px;
+  width: 100%;
+  margin: 0 auto;
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://demo.engineering-edge.com/assets/img/main/index-banner-1.webp");
+  background-repeat: no-repeat;
+  color: #fff;
+}
+
+.flexCol--brandInnerContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.flexColChild--brandInnerContainer {
+  height: auto !important;
+}
+
+.flexRowContent--BrandSymbolContainer {
+  padding: 60px 0;
+  display: flex;
+  gap: 200px;
+}
+
+.flexCol--brand {
+  display: flex;
+  direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.flexRow--customerSupportContainer {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.flexRow--customerSupportStyle {
+  margin: 30px 0;
+  background-color: #dfdfe3;
+  padding: 50px 32px;
+}
+
+.flexColChild--customerImage {
+  width: 10px;
+}
+
+:global(.vtex-flex-layout-0-x-flexCol--specification) {
+  background-color: #fff;
+  padding: 50px 30px;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.flexRowContent--specification-header {
+  padding-left: 35px;
+  color: #6f6b7d;
+}
+
+:global(.vtex-flex-layout-0-x-flexRowContent--productSpecification) {
+  padding-left: 20px;
+  background-color: #fff;
+}
+
+:global(.vtex-flex-layout-0-x-flexRow--specification) {
+  margin: 40px 0px;
+}
+
+:global(.vtex-product-specifications-1-x-specificationValue) {
+  color: #6f6b7d !important;
+}
+
+.flexRow--CustomerViewContainer {
+  max-width: 1375px;
+  margin: 0 auto;
+  border-radius: 4px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
