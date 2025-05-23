@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import { FormattedMessage } from 'react-intl'
 import {
   Layout,
@@ -11,36 +11,26 @@ import { useRuntime } from 'vtex.render-runtime'
 import { useQuery } from 'react-apollo'
 
 import { GetQuotes } from './graphql/GetQuotes.graphql'
-import { GetQuoteById } from './graphql/GetQuote.graphql'
 import './styles.global.css'
 
 const AdminExample: FC = () => {
   const runtime = useRuntime()
-
-  // Only passing the account variable to the query
 
   console.log(runtime.account)
   const variables = {
     account: runtime.account
   }
 
-  const { data, loading, error } = useQuery(GetQuotes, {
+  const { data, loading, error, refetch } = useQuery(GetQuotes, {
     variables,
     fetchPolicy: 'network-only'
   })
 
-  const { data: getQuoteByIdData} = useQuery(GetQuoteById, {
-    variables: { quoteId: '586d49a9-3181-11f0-b37f-8d4a634bba6a' },
-    fetchPolicy: 'network-only'
-  })
-
-  console.log("getQuoteByIdData:&&&&&&&&&&", getQuoteByIdData)
-
-  console.log("$$$$$$$$$$$$$$$$$$$$", data)
-  
-
-  console.log("Query variables:", variables)
-  console.log("Runtime account:", runtime.account)
+  // Check if we're returning from detail page and refetch data
+  React.useEffect(() => {
+    // This will run when the component mounts or is revisited
+    refetch();
+  }, [refetch]);
 
   if (loading) return <div>Loading...</div>
   if (error) return <div>Error: {error.message}</div>
@@ -148,6 +138,17 @@ const AdminExample: FC = () => {
               items={data?.GetQuotes}
               density="low"
               fullWidth
+              onRowClick={({ rowData }) => {
+                console.log('Row clicked:', rowData);
+                if (rowData && rowData.id) {
+                  console.log('Navigating to quote:', rowData.id);
+                  runtime.navigate({
+                    to: `/admin/app/example/${rowData.id}`,
+                  });
+                } else {
+                  console.error('Missing rowData.id for navigation');
+                }
+              }}
             />
           )}
         </div>
