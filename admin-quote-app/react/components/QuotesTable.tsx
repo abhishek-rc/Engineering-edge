@@ -21,6 +21,14 @@ import { LabelByStatusMap } from '../utils/status'
 import { getEmptySimpleQuote } from '../utils/helpers'
 import styles from './QuotesTable.css'
 
+// Augment the QuoteSimple interface to include the assignedTo property
+declare global {
+  interface QuoteSimple {
+    assignedTo?: string | null
+    assigneeId?: string | null
+  }
+}
+
 interface QuotesTableProps {
   permissions: string[]
   mainOrganizationId: string
@@ -212,14 +220,15 @@ const QuotesTable: FunctionComponent<QuotesTableProps> = ({
           )
         },
       },
-      creatorEmail: {
-        title: formatMessage(tableMessages.email),
+      assignedTo: {
+        title: "Assignee",
+        sortable: true,
         cellRenderer: ({
-          rowData: { creatorEmail, rowLoading },
+          rowData: { assignedTo, rowLoading },
         }: CellRendererProps) => {
           if (rowLoading) return '---'
 
-          return <>{creatorEmail}</>
+          return <div className="w-150 tr">{assignedTo || '-'}</div>
         },
       },
       creationDate: {

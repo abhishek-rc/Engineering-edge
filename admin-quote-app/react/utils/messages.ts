@@ -115,6 +115,9 @@ export const tableMessages = defineMessages({
   email: {
     id: `${storePrefix}quotes-table.creatorEmail.title`,
   },
+  assignee: {
+    id: `${storePrefix}quotes-table.assignee.title`,
+  },
   creationDate: {
     id: `${storePrefix}quotes-table.creationDate.title`,
   },

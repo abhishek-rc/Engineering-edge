@@ -23,6 +23,8 @@ declare global {
     seller?: string
     sellerName?: string
     rowLoading?: boolean
+    assigneeId?: string | null
+    assignedTo?: string | null
   }
 
   interface Quote extends QuoteSimple {

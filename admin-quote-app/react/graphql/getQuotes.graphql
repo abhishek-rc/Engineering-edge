@@ -36,6 +36,8 @@ query GetQuotes(
       viewedByCustomer
       hasChildren
       childrenQuantity
+      assigneeId
+      assignedTo
     }
     pagination {
       total
