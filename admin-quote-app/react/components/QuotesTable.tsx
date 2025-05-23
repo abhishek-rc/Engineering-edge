@@ -231,25 +231,36 @@ const QuotesTable: FunctionComponent<QuotesTableProps> = ({
           return <div className="w-150 tr">{assignedTo || '-'}</div>
         },
       },
-      creationDate: {
-        title: formatMessage(tableMessages.creationDate),
+      creatorEmail: {
+        title: formatMessage(tableMessages.email),
+        sortable: true,
         cellRenderer: ({
-          rowData: { creationDate, rowLoading },
+          rowData: { creatorEmail, rowLoading },
         }: CellRendererProps) => {
           if (rowLoading) return '---'
 
-          return (
-            <>
-              {formatDate(creationDate, {
-                day: 'numeric',
-                month: 'numeric',
-                year: 'numeric',
-              })}
-            </>
-          )
+          return <>{creatorEmail}</>
         },
-        sortable: true,
       },
+      // creationDate: {
+      //   title: formatMessage(tableMessages.creationDate),
+      //   cellRenderer: ({
+      //     rowData: { creationDate, rowLoading },
+      //   }: CellRendererProps) => {
+      //     if (rowLoading) return '---'
+
+      //     return (
+      //       <>
+      //         {formatDate(creationDate, {
+      //           day: 'numeric',
+      //           month: 'numeric',
+      //           year: 'numeric',
+      //         })}
+      //       </>
+      //     )
+      //   },
+      //   sortable: true,
+      // },
       expirationDate: {
         title: formatMessage(tableMessages.expirationDate),
         cellRenderer: ({
