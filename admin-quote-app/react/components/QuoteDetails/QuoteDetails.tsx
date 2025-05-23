@@ -148,7 +148,7 @@ const QuoteDetails: FunctionComponent = () => {
     ssr: false,
     skip: isNewQuote,
   })
-
+  
   const { data: sellersData, loading: loadingSellers } = useQuery(GET_SELLERS, {
     fetchPolicy: 'network-only',
     ssr: false,
@@ -247,6 +247,12 @@ const QuoteDetails: FunctionComponent = () => {
       setOptions(sellerOptions)
     }
   }, [sellersData])
+
+  useEffect(() => {
+    if (data?.getQuote?.assigneeId) {
+      setSelectedSeller(data.getQuote.assigneeId);
+    }
+  }, [data?.getQuote?.assigneeId]);
 
   // Handler for when user changes the selected seller
   const handleSellerChange = (value: any) => {
@@ -848,7 +854,10 @@ const QuoteDetails: FunctionComponent = () => {
                           placeholder="Select seller to send quote"
                           options={options}
                           value={selectedSeller}
-                          onChange={(_: any, v: any) => handleSellerChange(v)}
+                          onChange={(_: any, v: any) => {
+                            setSelectedSeller(v);
+                            handleSellerChange(v);
+                          }}
                           disabled={loading}
                         />
                       </div>
