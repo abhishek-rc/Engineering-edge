@@ -1,0 +1,26 @@
+{
+  "store.b2b-quotes": {
+    "required": ["quotes-table"]
+  },
+  "quotes-table": {
+    "component": "QuotesTable"
+  },
+  "quotes-locking-modal": {
+    "component": "B2BQuotesLockingModal"
+  },
+  "store.create-b2b-quote": {
+    "required": ["quote-details"]
+  },
+  "store.b2b-quote-details": {
+    "required": ["quote-details"]
+  },
+  "quote-details": {
+    "component": "QuoteDetails"
+  },
+  "my-account-link.b2b-quotes": {
+    "component": "B2BQuotesLink"
+  },
+  "my-account-page.b2b-quotes": {
+    "component": "B2BQuotesListAccount"
+  }
+}
