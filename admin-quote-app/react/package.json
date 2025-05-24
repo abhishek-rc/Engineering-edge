@@ -7,13 +7,14 @@
   "dependencies": {
     "@vtex/admin-ui": "^0.132.7",
     "@vtex/css-handles": "^1.0.0",
-    "graphql": "^14.5.8",
+    "axios": "1.4.0",
+    "graphql": "^16.11.0",
     "react": "^16.9.2",
     "react-apollo": "^3.1.5",
-    "react-intl": "^5.13.4",
-    "axios": "1.4.0"
+    "react-intl": "^5.13.4"
   },
   "devDependencies": {
+    "@types/graphql": "^14.5.0",
     "@types/jest": "^24.0.18",
     "@types/node": "^12.7.5",
     "@types/react": "^16.9.2",

@@ -222,13 +222,24 @@ const QuotesTable: FunctionComponent<QuotesTableProps> = ({
       },
       assignedTo: {
         title: "Assignee",
+        // title: formatMessage(tableMessages.assigneeName),
         sortable: true,
         cellRenderer: ({
           rowData: { assignedTo, rowLoading },
         }: CellRendererProps) => {
           if (rowLoading) return '---'
 
-          return <div className="w-150 tr">{assignedTo || '-'}</div>
+          return (
+            <div className="w-150 tr">
+              {assignedTo ? (
+                <span className="bg-muted-3 c-on-muted-3 pa3 br-pill dib">
+                  {assignedTo}
+                </span>
+              ) : (
+                '-'
+              )}
+            </div>
+          )
         },
       },
       creatorEmail: {

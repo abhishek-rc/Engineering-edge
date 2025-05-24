@@ -190,6 +190,9 @@ export const tableMessages = defineMessages({
   filtersIncludes: {
     id: `${storePrefix}quotes-table.filters.includes`,
   },
+  assigneeName: {
+    id: `${storePrefix}quotes-table.assignee`,
+  },
 })
 
 export const statusMessages = defineMessages({

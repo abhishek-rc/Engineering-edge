@@ -135,7 +135,7 @@ const QuoteDetails: FunctionComponent = () => {
   const [updatingSubtotal, setUpdatingSubtotal] = useState(0)
   const [sentToSalesRep, setSentToSalesRep] = useState(false)
   const [selectedSeller, setSelectedSeller] = useState(null)
-  const [options, setOptions] = useState<Array<{value: string, label: string}>>([])
+  const [options, setOptions] = useState<Array<{ value: string, label: string }>>([])
 
   const getQuoteVariables = { id: params?.id }
 
@@ -148,7 +148,7 @@ const QuoteDetails: FunctionComponent = () => {
     ssr: false,
     skip: isNewQuote,
   })
-  
+
   const { data: sellersData, loading: loadingSellers } = useQuery(GET_SELLERS, {
     fetchPolicy: 'network-only',
     ssr: false,
@@ -262,10 +262,20 @@ const QuoteDetails: FunctionComponent = () => {
     if (value === null) {
       return
     }
-  
+
     updateAssignee({
       variables: {
         assignedTo: 'seller',
+        assigneeId: value,
+        documentId: params?.id,
+      },
+    })
+  }
+
+  const handleSendToCustomer = (value: any) => {
+    updateAssignee({
+      variables: {
+        assignedTo: 'customer',
         assigneeId: value,
         documentId: params?.id,
       },
@@ -769,7 +779,7 @@ const QuoteDetails: FunctionComponent = () => {
                   })
                 } else {
                   navigate({
-                    page: 'admin.app.b2b-quotes.settings',
+                    page: 'admin.app.b2b-quotes.view-quotes',
                   })
                 }
               }}
@@ -847,20 +857,40 @@ const QuoteDetails: FunctionComponent = () => {
                         </span>
                       )}
 
-                     {/* The condition should check if sellers are loaded, not loading */}
-                     {!loadingSellers && options.length > 0 && (
+                      {data?.getQuote?.assignedTo === "admin" && (
+                        <span className="mr4">
+                          <Button
+                            variation="primary"
+                            onClick={() => handleSendToCustomer(data?.getQuote?.creatorEmail)}
+                            isLoading={usingQuoteState}
+                          >
+                            <FormattedMessage id="admin/b2b-quotes.quote-details.send-to-customer" />
+                          </Button>
+                        </span>
+                      )}
+
+
+
+                      {/* The condition should check if sellers are loaded, not loading */}
+                      {!loadingSellers && options.length > 0 && data?.getQuote?.assignedTo !== "admin" && data?.getQuote?.assignedTo !== "customer" && (
                         <div className="pt6">
-                        <Dropdown
-                          placeholder="Select seller to send quote"
-                          options={options}
-                          value={selectedSeller}
-                          onChange={(_: any, v: any) => {
-                            setSelectedSeller(v);
-                            handleSellerChange(v);
-                          }}
-                          disabled={loading}
-                        />
-                      </div>
+                          <Dropdown
+                            placeholder="Select seller to send quote"
+                            options={options}
+                            value={selectedSeller}
+                            onChange={(_: any, v: any) => {
+                              setSelectedSeller(v);
+                              handleSellerChange(v);
+                            }}
+                            disabled={loading}
+                          />
+                        </div>
+                      )}
+
+                      {data?.getQuote?.assignedTo === "customer" && (
+                        <div className="pt6">
+                          <div className='c-muted-2 pa3 bg-action-primary c-on-action-primary br-2'>Quote sent to customer</div>
+                        </div>
                       )}
                     </div>
                   </div>

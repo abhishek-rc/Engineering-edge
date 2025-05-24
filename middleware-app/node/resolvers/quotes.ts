@@ -24,9 +24,9 @@ export const GetQuoteById = async (_: any, args: any, ctx: Context) => {
   try {
     // Pass the quoteId parameter to the getQuotesById method
     const data = await CustomMasterData.getQuotesById(args.quoteId);
-    
+
     console.log("Data for GetQuoteById:", data);
-    
+
     // Return the first item from the array if it exists
     return data && data.length > 0 ? data[0] : null;
   } catch (error) {
@@ -55,7 +55,7 @@ export const UpdateAssignee = async (
         assignedTo: assignedTo, //SELLER or CUSTOMER or OPERATOR
         assigneeId: assigneeId, //SELLERACCOUNTID or CUSTOMERACCOUNTID or OPERATORACCOUNTID
       },
-      schema: "v1.4",
+      schema: "v1.3",
     });
     return true;
   } catch (error) {
