@@ -166,7 +166,6 @@ const QuoteDetails: FC<QuoteDetailsProps> = (props) => {
   }
 
   const handleSaveQuote = () => {
-    console.log("STARTED >>>>>>>>>>>>>")
     updateAssignee({
         variables: {
           assignedTo: 'admin',
@@ -185,7 +184,6 @@ const QuoteDetails: FC<QuoteDetailsProps> = (props) => {
         console.error("Error updating assignee:", error);
       });
 
-    console.log("ENDED >>>>>>>>>>>>>>>")
   }
 
   const quoteContent = (
@@ -207,13 +205,6 @@ const QuoteDetails: FC<QuoteDetailsProps> = (props) => {
           >
             <FormattedMessage id="seller-quote-app.reject" defaultMessage="REJECT" />
           </Button>
-          {/* <Button
-            variation="primary"
-            onClick={handleUseQuote}
-            className="mr3 ml3"
-          >
-            <FormattedMessage id="seller-quote-app.use-quote" defaultMessage="USE QUOTE" />
-          </Button> */}
         </div>
       </div>
 

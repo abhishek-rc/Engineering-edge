@@ -1,0 +1,17 @@
+mutation UpdateQuote(
+  $id: String!
+  $items: [QuoteItemInput]
+  $subtotal: Float
+  $note: String
+  $decline: Boolean
+  $expirationDate: String
+) {
+  UpdateQuote(
+    id: $id
+    items: $items
+    subtotal: $subtotal
+    note: $note
+    decline: $decline
+    expirationDate: $expirationDate
+  )
+}

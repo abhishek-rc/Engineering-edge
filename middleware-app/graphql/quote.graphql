@@ -7,17 +7,17 @@ input QuoteInput {
 }
 
 input QuoteItemInput {
-  name: String
-  skuName: String
-  refId: String
-  id: String
-  productId: String
-  imageUrl: String
-  listPrice: Float
-  price: Float
-  quantity: Int
-  sellingPrice: Float
-  seller: String
+  name: String!
+  skuName: String!
+  refId: String!
+  id: String!
+  productId: String!
+  imageUrl: String!
+  listPrice: Float!
+  price: Float!
+  quantity: Int!
+  sellingPrice: Float!
+  seller: String!
 }
 
 input QuoteUpdateInput {

@@ -9,4 +9,12 @@ type Query {
 
 type Mutation {
     UpdateAssignee(assignedTo: String, assigneeId: String, documentId: String): Boolean
+    UpdateQuote(
+    id: String!
+    items: [QuoteItemInput]
+    subtotal: Float
+    note: String
+    decline: Boolean
+    expirationDate: String
+  ): Boolean
 }

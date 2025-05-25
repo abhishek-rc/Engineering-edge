@@ -295,7 +295,7 @@ export const Mutation = {
     },
     ctx: Context
   ) => {
-    const {
+        const {
       clients: { masterdata },
       vtex,
       vtex: { logger },

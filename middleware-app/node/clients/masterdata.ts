@@ -27,13 +27,13 @@ export default class MasterDataClient extends ExternalClient {
 
   public async getAssigneeQuotes(assignedId: string): Promise<any> {
     return this.http.get(
-      `quotes/search?_fields=_all&_where=assigneeId=${assignedId}&_schema=v1.4`
+      `quotes/search?_fields=_all&_where=assigneeId=${assignedId}&_schema=v1.3`
     );
   }
 
   public async getQuotesById(quoteId: string): Promise<any> {
     return this.http.get(
-      `quotes/search?_fields=_all&id=${quoteId}&_schema=v1.4`
+      `quotes/search?_fields=_all&id=${quoteId}&_schema=v1.3`
     );
   }
 

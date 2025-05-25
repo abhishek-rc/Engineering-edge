@@ -62,3 +62,48 @@ export const UpdateAssignee = async (
     throw new Error(`Failed to update assignee: ${error}`);
   }
 };
+
+
+export const UpdateQuote = async (
+  _: any,
+  args: {
+    id: string
+    items?: Array<Record<string, any>>
+    subtotal?: number
+    note?: string
+    decline?: boolean
+    expirationDate?: string
+  },
+  ctx: Context
+) => {
+  const {
+    clients: { CustomMasterData },
+  } = ctx;
+
+  const { id, items, subtotal, note, decline, expirationDate } = args;
+
+  const fields: Record<string, any> = {};
+
+  if (items !== undefined) fields.items = items;
+  if (subtotal !== undefined) fields.subtotal = subtotal;
+  if (note !== undefined) fields.note = note;
+  if (decline !== undefined) fields.decline = decline;
+  if (expirationDate !== undefined) fields.expirationDate = expirationDate;
+
+  if (Object.keys(fields).length === 0) {
+    throw new Error("No fields provided to update.");
+  }
+
+  try {
+    await CustomMasterData.updatePartialDocument({
+      dataEntity: "quotes",
+      id,
+      fields,
+      schema: "v1.3",
+    });
+
+    return true;
+  } catch (error) {
+    throw new Error(`Failed to update quote: ${error}`);
+  }
+};
