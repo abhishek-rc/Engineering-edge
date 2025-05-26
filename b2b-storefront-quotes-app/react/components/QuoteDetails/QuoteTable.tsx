@@ -123,7 +123,7 @@ const QuoteTable = ({
               rowData: { id: itemId, listPrice, error },
             }: any) => {
               if (
-                data?.getQuote?.assigneeId === null &&
+                // data?.getQuote?.assignedTo !=='customer' &&
                 formState.isEditable &&
                 isSalesRep &&
                 discountState === 0 &&
@@ -160,7 +160,7 @@ const QuoteTable = ({
               cellData: quantity,
               rowData: { id: itemId },
             }: any) => {
-              if (formState.isEditable && isSalesRep && data?.getQuote?.assigneeId ===null ) {
+              if (formState.isEditable && isSalesRep && data?.getQuote?.assignedTo !=='customer' ) {
                 return (
                   <Input
                     id={itemId}
