@@ -751,7 +751,7 @@ const QuoteDetails: FunctionComponent = () => {
                     />
 
                     <div className="nowrap">
-                      {data?.getQuote?.assigneeId === null && <SaveButtons
+                      {<SaveButtons
                         isNewQuote={isNewQuote}
                         updatingQuoteState={updatingQuoteState}
                         sentToSalesRep={sentToSalesRep}
@@ -772,7 +772,7 @@ const QuoteDetails: FunctionComponent = () => {
                         isSalesRep={isSalesRep}
                       />}
                       {
-                        data?.getQuote?.assigneeId !== null && (
+                        data?.getQuote?.assignedTo === 'customer' && (
                           <span className="mr4">
                             <Button
                               variation="primary"
