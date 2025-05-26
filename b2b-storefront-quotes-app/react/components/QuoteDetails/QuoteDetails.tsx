@@ -448,10 +448,6 @@ const QuoteDetails: FunctionComponent = () => {
       })
   }
 
-  const handlePlaceOrder = () => {
-    alert("BHAI JI ORDER PLACED!!!!!!!!!!!!!!!!!!!!")
-  }
-
   const handleUpdateSellingPrice: (
     id: string
   ) => ChangeEventHandler<HTMLInputElement> = (itemId) => (event) => {
@@ -776,7 +772,7 @@ const QuoteDetails: FunctionComponent = () => {
                           <span className="mr4">
                             <Button
                               variation="primary"
-                              onClick={() => handlePlaceOrder()}
+                              onClick={() => goToCheckout(checkoutUrl)}
                             >
                               {"Place Order"}
                             </Button>
