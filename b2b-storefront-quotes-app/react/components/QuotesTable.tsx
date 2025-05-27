@@ -7,7 +7,7 @@ import {
   Tag,
   Checkbox,
   Spinner,
-  Tooltip,
+  Tooltip
 } from 'vtex.styleguide'
 import { useIntl, FormattedMessage } from 'react-intl'
 import { FormattedCurrency } from 'vtex.format-currency'
@@ -409,6 +409,12 @@ const QuotesTable: FunctionComponent<QuotesTableProps> = ({
       />
     )
   }
+  const filteredQuotes = quotes.filter(q =>
+    (q.referenceName && q.referenceName.toLowerCase().includes(searchValue.toLowerCase())) ||
+    (q.id && q.id.toLowerCase().includes(searchValue.toLowerCase()))
+    // Add more fields if you want to search by them
+  );
+  
 
   return (
     <PageBlock>
@@ -416,10 +422,11 @@ const QuotesTable: FunctionComponent<QuotesTableProps> = ({
         <Table
           density="low"
           fullWidth
-          items={quotes}
+          // items={quotes}
           loading={loading}
           schema={getSchema()}
           lineActions={lineActions}
+          items={filteredQuotes}
           onRowClick={({ rowData: { id } }: CellRendererProps) => {
             if (!id) return
 
