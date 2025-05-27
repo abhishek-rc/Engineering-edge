@@ -1,0 +1,154 @@
+{
+  "store.custom#brandpage": {
+    "blocks": ["flex-layout.row#brand-content"],
+    "props":{"blockClass":"bbpp"}
+  },
+  "flex-layout.row#brand-content": {
+    "children": ["flex-layout.col#brand-col"],
+    "props":{"blockClass":"bpage"}
+  },
+  "flex-layout.col#brand-col": {
+    "children": [
+      "info-card#b1",
+      "flex-layout.row#bestSellingProducts",
+      "info-card#b2",
+      "flex-layout.row#twoImg",
+      "info-card#b3"
+    ]
+  },
+
+  "info-card#b1": {
+    "props": {
+      "id": "info-card-example",
+      "isFullModeStyle": true,
+      "textPosition": "left",
+      "imageUrl": "https://demo.engineering-edge.com/assets/img/corroshield/cs-banner-1.webp",
+      "headline": "CORROSHIELD®",
+      "bodyText": "A premium range of innovative anti-corrosion fasteners self-drilling fasteners,engineered for harsh environments and backed by our ISO-certified guarantee as professional fastener manufacturers.",
+      "callToActionMode": "none",
+      "blockClass": "info-card-example",
+      "textAlignment": "center",
+      "fetchpriority": "auto",
+      "preload": true
+    }
+  },
+
+  "info-card#b2": {
+    "props": {
+      "id": "info-card-example",
+      "isFullModeStyle": true,
+      "textPosition": "left",
+      "imageUrl": "https://demo.engineering-edge.com/assets/img/corroshield/cs-banner-2.webp",
+      "headline": "CORROSHIELD® COATING TECHNOLOGY",
+      "bodyText": "UP TO 60 YEARS WARRANTY",
+      "callToActionMode": "none",
+      "blockClass": "info-card-example",
+      "textAlignment": "center",
+      "fetchpriority": "auto",
+      "preload": true
+    }
+  },
+
+  "flex-layout.row#twoImg": {
+    "children": ["image#img1", "image#img2"]
+  },
+  "image#img1": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-banner-2a.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#img2": {
+    "props": {
+      "blockClass": "bsp-image",
+      "src": "https://demo.engineering-edge.com/assets/img/corroshield/cs-banner-2b.webp",
+      "maxHeight": 400
+    }
+  },
+
+  "info-card#b3": {
+    "props": {
+      "id": "info-card-example",
+      "isFullModeStyle": true,
+      "textPosition": "left",
+      "imageUrl": "https://demo.engineering-edge.com/assets/img/corroshield/cs-banner-3.webp",
+      "headline": "CORROSHIELD® INNOVATION",
+      "bodyText": "At Engineering Edge, our relentless R&D efforts drive continuous innovation in quality management standards.We are dedicated to enhancing efficiency and minimizing fastener failures through cutting-edge advancements.The CORROSHIELD® range offers superior quality and reliability that you can trust.",
+      "callToActionMode": "none",
+      "blockClass": "info-card-example",
+      "textAlignment": "center",
+      "fetchpriority": "auto",
+      "preload": true
+    }
+  },
+  "rich-text#brand-heading": {
+    "props": {
+      "text": "## brand by Categories",
+      "textPosition": "center"
+    }
+  },
+  "category-menu#brand": {
+    "props": {
+      "categories": [1, 2, 3, 4, 5],
+      "displayMode": "grid",
+      "showImages": true,
+      "itemsPerRow": 5,
+      "showSubcategories": false,
+      "blockClass": "scroll-categories"
+    }
+  },
+
+  "search-result-layout.customQuery": {
+    "props": {
+      "querySchema": {
+        "orderByField": "OrderByReleaseDateDESC",
+        "hideUnavailableItems": true,
+        "maxItemsPerPage": 8,
+        "queryField": "corroshield",
+        "mapField": "brand"
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop",
+      "search-result-layout.mobile",
+      "search-not-found-layout"
+    ]
+  },
+  "search-result-layout.desktop": {
+    "children": [
+      "breadcrumb.search",
+      "search-title.v2",
+      "flex-layout.row#top",
+      "search-fetch-previous",
+      "flex-layout.row#results",
+      "search-fetch-more"
+    ],
+    "props": {
+      "pagination": "show-more",
+      "preventRouteChange": true
+    }
+  },
+  "flex-layout.row#top": {
+    "children": ["total-products.v2", "order-by.v2"]
+  },
+  "flex-layout.row#results": {
+    "children": ["flex-layout.col#filter", "flex-layout.col#search"]
+  },
+  "flex-layout.col#filter": {
+    "props": {
+      "width": "25%"
+    },
+    "children": ["flex-layout.row#searchbread","filter-navigator.v3"]
+  },
+  "flex-layout.col#search": {
+    "children": ["search-content"]
+  },
+  "search-content": {
+    "blocks": ["gallery", "not-found"]
+  },
+  "gallery": {
+    "props": { "blockClass": "gallery-i" },
+    "blocks": ["product-summary.shelf.product-comparison#complete"]
+  }
+}

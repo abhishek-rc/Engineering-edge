@@ -70,5 +70,12 @@
   },
   "store.custom#returns": {
     "path": "/returns"
+  },
+
+  "store.custom#shop": {
+    "path": "/shop"
+  },
+  "store.custom#brandpage": {
+    "path": "/corroshield"
   }
 }

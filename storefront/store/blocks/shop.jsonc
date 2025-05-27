@@ -1,0 +1,91 @@
+{
+  "store.custom#shop": {
+    "blocks": ["flex-layout.row#shop-content"]
+  },
+  "flex-layout.row#shop-content": {
+    "children": ["flex-layout.col#shop-col"]
+  },
+  "flex-layout.col#shop-col": {
+    "children": ["rich-text#shop-heading", "category-menu#shop","search-result-layout.customQuery"]
+  },
+  "rich-text#shop-heading": {
+    "props": {
+      "text": "## Shop by Categories",
+      "textPosition": "center"
+    }
+  },
+  "category-menu#shop": {
+    "props": {
+      "categories": [1, 2, 3, 4, 5],
+      "displayMode": "grid",
+      "showImages": true,
+      "itemsPerRow": 5,
+      "showSubcategories": false,
+      "blockClass": "scroll-categories"
+    }
+  },
+
+  "search-result-layout.customQuery": {
+    "props": {
+      "querySchema": {
+        "orderByField": "OrderByReleaseDateDESC",
+        "hideUnavailableItems": true,
+        "maxItemsPerPage": 8,
+        "queryField": "corroshield",
+        "mapField": "brand"
+      }
+    },
+    "blocks": [
+      "search-result-layout.desktop",
+      "search-result-layout.mobile",
+      "search-not-found-layout"
+    ]
+  },
+  "search-result-layout.desktop": {
+    "children": [
+      "breadcrumb.search",
+      "search-title.v2",
+      "flex-layout.row#top",
+      "search-fetch-previous",
+      "flex-layout.row#results",
+      "search-fetch-more"
+    ],
+    "props": {
+      "pagination": "show-more",
+      "preventRouteChange": true
+    }
+  },
+  "flex-layout.row#top": { 
+    "children": [
+      "total-products.v2",
+      "order-by.v2"
+    ]
+  },
+  "flex-layout.row#results": { 
+    "children": [ 
+      "flex-layout.col#filter",
+      "flex-layout.col#search"
+    ]
+  },
+  "flex-layout.col#filter": { 
+    "props": {
+      "width": "25%"
+    },
+    "children": [
+      "flex-layout.row#searchbread",
+      "filter-navigator.v3"
+    ]
+  },
+  "flex-layout.col#search": { 
+    "children": [
+      "search-content"
+    ]
+  },
+  "search-content": { 
+    "blocks": ["gallery", "not-found"]
+  },
+  "gallery": {
+   "props":{"blockClass":"gallery-i"},
+    "blocks": ["product-summary.shelf.product-comparison#complete"]
+  }
+}

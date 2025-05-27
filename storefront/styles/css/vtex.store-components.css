@@ -861,3 +861,25 @@
   width: 352px;
   height: 112px;
 }
+
+.imageElement--cert-image {
+  padding: 0.5rem !important;
+  flex: 0 0 auto;
+  width: 85%;
+  max-height: 75%;
+  height: fit-content;
+}
+
+/* .flexRow--bpage.container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+} */
+
+.flexRow--bpage .container{
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

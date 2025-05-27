@@ -5,6 +5,7 @@
   border-radius: 8px;
   padding: 20px;
   transition: all 0.3s ease;
+  padding: 0;
 }
 
 .containerNormal--minimumSummary {
@@ -100,10 +101,10 @@
 }
 
 .container--summaryComplete .image {
-  margin-bottom: 16px;
+  /* margin-bottom: 10px; */
   width: 196px;
-  height: 196px;
-  object-fit: contain;
+  height: 125px;
+  /* object-fit: contain; */
 }
 
 .element--summaryComplete {
@@ -303,4 +304,26 @@
     line-height: 24px;
     font-weight: 500;
   }
+}
+
+/* Custom handles */
+
+.productNameContainer {
+  padding: 10px;
+  text-align: left;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000;
+  width: 100%;
+  margin-bottom: 16px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: inline !important;
+}
+
+.brandName {
+  font-weight: 500;
+  font-size: 15px;
+  color: rgb(75, 75, 75);
+  display: inline;
 }

@@ -5,14 +5,14 @@
     },
     "children": [
       "flex-layout.row#stackSavings",
-      "product-summary-brand",
-      "product-summary-name",
-      "product-rating-summary",
-      "check-permission#product-summary-price",
-      "check-permission#product-summary-buy-button",
-      "add-to-list-btn",
-      "modal-trigger#quickview",
-      "check-permission#product-comparison-block"
+      // "product-summary-brand",
+      "product-summary-name"
+      // "product-rating-summary",
+      // "check-permission#product-summary-price",
+      // "check-permission#product-summary-buy-button",
+      // "add-to-list-btn",
+      // "modal-trigger#quickview",
+      // "check-permission#product-comparison-block"
     ]
   },
   "product-summary.shelf#complete": {

@@ -845,3 +845,10 @@
   margin-block-end: 0;
   margin-block-start: 0px;
 }
+
+.container--cert-rte {
+  font-size: 48px;
+  line-height: 66px;
+  font-weight: 700;
+  color: rgb(93, 89, 108);
+}

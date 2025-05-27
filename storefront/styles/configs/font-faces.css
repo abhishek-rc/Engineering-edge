@@ -24,3 +24,17 @@
     url("assets/fonts/roboto-v20-latin-700.woff2") format("woff2"),
     url("assets/fonts/roboto-v20-latin-700.woff") format("woff");
 }
+@font-face {
+  font-family: "play";
+  font-style: normal;
+  font-weight: 700;
+  src: 
+    url("assets/fonts/Play-Bold.ttf") format("ttf"),
+}
+@font-face {
+  font-family: "play";
+  font-style: normal;
+  font-weight: 500;
+  src: 
+    url("assets/fonts/Play-Bold.ttf") format("ttf"),
+}
