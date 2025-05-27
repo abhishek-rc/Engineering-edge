@@ -67,7 +67,8 @@
     "children": [
       "flex-layout.row#searchLayout",
       "product-comparison-drawer",
-      "flex-layout.row#blog"
+      "flex-layout.row#bestSellingProducts",
+      "flex-layout.row#certificates"
     ],
     "props": {
       "pagination": "show-more",
@@ -80,34 +81,40 @@
     }
   },
   "flex-layout.row#searchLayout": {
-    "children": ["flex-layout.row#filter", "flex-layout.col#pageContent"],
+    "children": ["flex-layout.col#filter", "flex-layout.col#pageContent"],
     "props": {
       "colSizing": "auto",
-      "fullWidth": true
+      "fullWidth": true,
+      "blockClass":"sl-container"
     }
   },
   "flex-layout.col#pageContent": {
-    "children": ["flex-layout.row#imageList", "flex-layout.col#search-content"],
+    "children": ["flex-layout.col#search-content"],
     "props": {
       "blockClass": "pageContent",
-      "preventVerticalStretch": true
+      "preventVerticalStretch": true,
+      "width":"100%"
     }
   },
   "flex-layout.col#search-content": {
     "children": [
-      "flex-layout.row#searchbread",
-      "flex-layout.row#searchtitle",
-      "flex-layout.row#SEOText",
+      // "flex-layout.row#searchbread",
+      // "flex-layout.row#searchtitle",
+      // "flex-layout.row#SEOText",
       // Deprecated
       // "flex-layout.row#categorySlider",
-      "flex-layout.row#searchinfo",
+      // "flex-layout.row#searchinfo",
       "flex-layout.row#fetchprevious",
       "flex-layout.row#products",
       "flex-layout.row#fetchmore"
     ],
     "props": {
       "paddingLeft": 7,
-      "paddingRight": 7
+      "paddingRight": 7,
+      "blockClass":"sl-products",
+      "width":"100%",
+      
+      "preventVerticalStretch": true
     }
   },
   "flex-layout.row#SEOText": {
@@ -125,13 +132,17 @@
     "props": {
       "preserveLayoutOnMobile": true,
       "fullWidth": true,
-      "marginBottom": 5
+      "marginBottom": 5,
+      "blockClass":"mybread",
+      "preventVerticalStretch":true
     }
   },
 
   "flex-layout.col#searchbread": {
     "children": ["breadcrumb.search#default"],
     "props": {
+      "blockClass":"breadcumb-plp",
+      "preventVerticalStretch":true,
       "paddingLeft": {
         "desktop": 0,
         "mobile": 5
@@ -158,14 +169,18 @@
   "flex-layout.row#filter": {
     "children": ["flex-layout.col#filter"],
     "props": {
-      "paddingTop": 3
+      "paddingTop": 7,
+      "preventVerticalStretch":true,
+      "blockClass":"myplp"
     }
   },
   "flex-layout.col#filter": {
-    "children": ["filter-navigator.v3"],
+    "children": ["flex-layout.row#searchbread","filter-navigator.v3"],
     "props": {
       "blockClass": "filterCol",
-      "paddingLeft": 7
+      "paddingLeft": 7,
+      "paddingTop":3,
+      "preventVerticalStretch":true
     }
   },
 
@@ -201,7 +216,8 @@
     "children": ["search-fetch-more"]
   },
   "flex-layout.row#products": {
-    "children": ["search-content"]
+    "children": ["search-content"],
+    "props":{"blockClass":"myprod"}
   },
   "search-content": {
     "blocks": ["gallery", "not-found"]
@@ -289,10 +305,133 @@
     }
   },
   "gallery": {
+    "props":{"blockClass":"gallery-i"},
     "blocks": ["product-summary.shelf.product-comparison#complete"]
   },
   "gallery#mobile": {
     "blocks": ["product-summary.shelf#normal"]
+  },
+
+  "flex-layout.row#certificates":{
+     "children": [
+      "flex-layout.col#cartificate"
+    ]
+  },
+  "flex-layout.col#cartificate":{
+     "children": [
+      "rich-text#cartificate",
+      "flex-layout.row#certImages"
+    ]
+  },
+  "rich-text#cartificate":{
+     "props": {
+      "text": "MANUFACTURED ACCORDING TO <br> INTERNATIONAL STANDARDS AND TESTING CERTIFICATIONS",
+      "blockClass": "cert-rte",
+      "textAlignment": "CENTER"
+    }
+  },
+  "flex-layout.row#certImages":{
+    "props":{
+      "blockClass":"cert-image-container"
+    },
+    "children": [
+      "image#c1",
+      "image#c2",
+      "image#c3",
+      "image#c4",
+      "image#c5",
+      "image#c6",
+      "image#c7",
+      "image#c8",
+      "image#c9",
+      "image#c10",
+      "image#c11",
+      "image#c12"
+    ]
+  },
+  "image#c1": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-iso.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c2": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-isw.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c3": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-sa.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c4": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-din.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c5": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-bsi.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c6": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-ifi.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c7": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-sabs.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c8": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-en.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c9": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-eota.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c10": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-tuv.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c11": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-ilts.webp",
+      "maxHeight": 400
+    }
+  },
+  "image#c12": {
+    "props": {
+      "blockClass": "cert-image",
+      "src": "https://demo.engineering-edge.com/assets/img/standards/accd-sts.webp",
+      "maxHeight": 400
+    }
   }
   // Deprecated
   // "flex-layout.row#categorySlider": {

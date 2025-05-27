@@ -238,6 +238,8 @@
   width: 264px;
   padding-right: 32px;
   border-right: 1px solid #e9eff5;
+  height: fit-content !important;
+  padding-top: 20px;
 }
 
 .flexRowContent--searchHeadInfo {
@@ -725,7 +727,8 @@
 
 .flexRow--c-on-base--inverted,
 .flexCol--c-on-base--inverted {
-  color: #fff;
+  /* color: #fff; */
+  color: #f8f7fa;
 }
 
 /* Custom  */
@@ -980,3 +983,20 @@ margin-right: 10px; */
   border-radius: 4px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 }
+
+.flexRowContent--sl-container {
+  justify-content: unset !important;
+}
+
+.flexRowContent--cert-image-container {
+  padding-bottom: 3rem !important;
+  justify-content: center !important;
+}
+.flexColChild--bestSellingProducts{
+  height: fit-content !important;
+}
+
+.flexCol--bestSellingProducts{
+  max-width: 1416px !important;
+}
+

@@ -82,7 +82,8 @@
     "vtex.storefront-permissions-ui": "1.x",
     "vtex.b2b-quotes": "1.x",
     "vtex.b2b-organizations": "1.x",
-    "vtex.similar-products-variants": "0.x"
+    "vtex.similar-products-variants": "0.x",
+    "vtex.category-menu": "2.x"
   },
   "$schema": "https://raw.githubusercontent.com/vtex/node-vtex-api/master/gen/manifest.schema"
 }

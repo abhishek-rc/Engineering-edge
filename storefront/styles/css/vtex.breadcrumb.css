@@ -11,6 +11,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 0;
+  max-height: fit-content !important;
 }
 
 .arrow--default {
@@ -41,4 +42,12 @@
 
 .homeLink--default {
   padding-right: 0.5rem;
+}
+
+.homeIcon--default{
+  height: 20px;
+  width: 20px;
+}
+.link--default--1{
+  font-size: 20px;
 }
