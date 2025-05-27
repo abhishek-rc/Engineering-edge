@@ -547,10 +547,14 @@ const QuoteDetails: FunctionComponent = () => {
             ? parseInt(event.target.value, 10)
             : 1
 
+        // if (quantity <= 0) {
+        //   quantity = 1
+        // } else if (quantity > 50) {
+        //   quantity = 50
+        // }
+
         if (quantity <= 0) {
           quantity = 1
-        } else if (quantity > 50) {
-          quantity = 50
         }
 
         newSubtotal += item.sellingPrice * quantity

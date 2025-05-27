@@ -30,11 +30,40 @@ const QuoteTable = ({
   checkedSellers,
   data
 }: any) => {
+  const [inputValues, setInputValues] = useState<{ [id: string]: string }>({});
   const intl = useIntl()
   const {
     culture,
     culture: { currency: currencyCode, locale },
   } = useRuntime()
+
+  const handleInputChange = (itemId: string) => (event: React.ChangeEvent<HTMLInputElement>) => {
+    let value = event.target.value;
+  
+    // If the user enters zero, immediately set value to "1"
+    if (value === "0") {
+      value = "1";
+    }
+  
+    setInputValues((prev) => ({ ...prev, [itemId]: value }));
+  
+    // Only update global state if value is a positive integer
+    if (/^\d+$/.test(value) && Number(value) > 0) {
+      // Create a synthetic event with value "1" if original value was "0"
+      if (event.target.value === "0") {
+        const syntheticEvent = {
+          ...event,
+          target: {
+            ...event.target,
+            value: "1"
+          }
+        };
+        onUpdateQuantity(itemId)(syntheticEvent as React.ChangeEvent<HTMLInputElement>);
+      } else {
+        onUpdateQuantity(itemId)(event);
+      }
+    }
+  };
 
   const { formatMessage, formatDate } = intl
   const formatPrice = (value: number) =>
@@ -160,17 +189,18 @@ const QuoteTable = ({
               cellData: quantity,
               rowData: { id: itemId },
             }: any) => {
-              if (formState.isEditable && isSalesRep && data?.getQuote?.assignedTo !=='customer' ) {
+              if (formState.isEditable && isSalesRep) {
                 return (
                   <Input
-                    id={itemId}
-                    name="quantity"
-                    value={quantity}
-                    onChange={onUpdateQuantity(itemId)}
-                  />
+                  id={itemId}
+                  name="quantity"
+                  type="number"
+                  min={1}
+                  value={inputValues[itemId] !== undefined ? inputValues[itemId] : quantity}
+                  onChange={handleInputChange(itemId)}
+                />
                 )
               }
-
               return quantity
             },
           },

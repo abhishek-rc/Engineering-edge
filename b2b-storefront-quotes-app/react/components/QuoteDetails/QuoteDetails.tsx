@@ -488,11 +488,15 @@ const QuoteDetails: FunctionComponent = () => {
           !new RegExp(/[^\d]/g).test(event.target.value) && event.target.value
             ? parseInt(event.target.value, 10)
             : 1
+    
+        // if (quantity <= 0) {
+        //   quantity = 1
+        // } else if (quantity > 50) {
+        //   quantity = 50
+        // }
 
         if (quantity <= 0) {
           quantity = 1
-        } else if (quantity > 50) {
-          quantity = 50
         }
 
         newSubtotal += item.sellingPrice * quantity
@@ -502,7 +506,7 @@ const QuoteDetails: FunctionComponent = () => {
           quantity,
         }
       }
-
+      console.log("===item.quantity===", item.quantity)
       newSubtotal += item.sellingPrice * item.quantity
 
       return item
