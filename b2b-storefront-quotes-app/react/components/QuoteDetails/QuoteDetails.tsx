@@ -772,13 +772,15 @@ const QuoteDetails: FunctionComponent = () => {
                           <span className="mr4">
                             <Button
                               variation="primary"
-                              onClick={() => goToCheckout(checkoutUrl)}
+                              onClick={() => handleUseQuote(quoteState)}
+                              isLoading={usingQuoteState}
                             >
                               {"Place Order"}
                             </Button>
                           </span>
                         )
                       }
+
                       {quoteDeclinable && (
                         <span className="mr4">
                           <Button
