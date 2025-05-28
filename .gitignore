@@ -3,3 +3,6 @@ node_modules/
 
 # Nested node_modules in any subdirectory
 **/node_modules/
+
+# storefront-permissoins
+storefront-permissions/
